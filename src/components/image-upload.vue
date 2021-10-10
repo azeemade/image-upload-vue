@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <div v-if="num_upload == 1">
+      <single-upload :action_type="action" :url_link="url" />
+    </div>
+    <div v-else>
+      <multi-upload
+        :file_input_num="num_upload"
+        :action_type="action"
+        :url_link="url"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+import MultiUpload from "./multi-upload.vue";
+import singleUpload from "./single-upload.vue";
+export default {
+  components: { singleUpload, MultiUpload },
+  name: "image-upload",
+  props: {
+    num_upload: {
+      type: Number,
+      default: 1,
+    },
+    action: {
+      type: String,
+      default: "create",
+    },
+    url: {
+      type: String,
+      default: "",
+    },
+  },
+};
+</script>
+
+<style>
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import "../assets/css/app.css";
+</style>
