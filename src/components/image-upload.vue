@@ -1,7 +1,9 @@
 <template>
   <div>
     <div v-if="num_upload == 1">
-      <single-upload :action_type="action" :url_link="url" :image_style="image_style" />
+      <single-upload :action_type="action" :url_link="url" 
+      :img_style="image_style" :img_title="title"
+      />
     </div>
     <div v-else>
       <multi-upload
@@ -34,7 +36,13 @@ export default {
     },
     image_style: {
       type: Object,
-      default: "",
+      default(){
+            return {
+                width:'160',
+                height: '160',
+                border:""
+            }
+        }
     },
     title: {
         type: String,

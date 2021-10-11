@@ -9,16 +9,16 @@
         <!-- For single upload num_upload can be null or 1 -->
         <div>
           <image-upload action="create" title="Upload new image"
-          image_style="{
+          :image_style="{
             border: 'rounded-circle',
-            height: '100px',
-            width: 100px
+            height: '100',
+            width: '100'
             }" 
           />
         </div>
         
         <div>
-          <image-upload :num_upload="4" action="create" image_border=""/>
+          <image-upload :num_upload="4" action="create"/>
         </div>
       </div>
       <div>
@@ -26,7 +26,8 @@
         
         <!-- For single upload num_upload can be null or 1 -->
         <div>
-          <image-upload action="edit" :url="require('@/assets/disco.png')"/>
+          <image-upload action="edit" :url="require('@/assets/disco.png')" 
+          title="Change image"/>
         </div>
         
         <div>

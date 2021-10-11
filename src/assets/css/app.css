@@ -6,15 +6,6 @@
 .fs-7 {
   font-size: 0.8rem;
 }
-.init {
-  height: 160px;
-  width: 160px;
-}
-.preview {
-  height: 160px;
-  width: 160px;
-}
-.url {
-  height: 160px;
-  width: 160px;
+.upload__btn:hover {
+  color: #8d8d8d;
 }

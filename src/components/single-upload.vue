@@ -3,16 +3,16 @@
         <div v-if="action_type == 'create'">
             <!--Image attachment preview section-->
             <div>
-                <img :src="preview == '' ? init : preview" class="init">
+                <img :src="preview == '' ? init : preview" :class="img_style.border" 
+                :height="img_style.height" :width="img_style.width">
             </div>
 
             <!--Image attachment upload section-->
             <div>
                 <div>
-                    <label for="file"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                    <label for="file"  class="text-primary btn-sm btn fs-7 upload__btn" title="Upload image">
                         <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
-                        Add new image
-                        <!--<i class="bi bi-plus grey"></i>-->
+                        {{img_title}}
                     </label>
                 </div> 
             </div>
@@ -29,7 +29,7 @@
                 <div>
                     <label for="file"  class="btn btn-sm text-primary fs-7" title="Change image">
                         <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
-                        Change image
+                        {{img_title}}
                     </label>
                 </div> 
                 <div>   
@@ -56,6 +56,20 @@ export default {
         url_link: {
             type: String,
             default: ''
+        },
+        img_style: {
+            type: Object,
+            default(){
+                return {
+                    width:'160',
+                    height: '160',
+                    border: ""
+                }
+            }
+        },
+        img_title: {
+            type: String,
+            default: "Upload image",
         }
     }, 
     data(){
