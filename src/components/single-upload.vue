@@ -3,15 +3,16 @@
         <div v-if="action_type == 'create'">
             <!--Image attachment preview section-->
             <div>
-                <img :src="preview == '' ? init : preview">
+                <img :src="preview == '' ? init : preview" class="init">
             </div>
 
             <!--Image attachment upload section-->
             <div>
                 <div>
-                    <label for="file"  class="btn">
+                    <label for="file"  class="text-primary btn-sm btn fs-7" title="Upload image">
                         <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
-                        <i class="bi bi-plus"></i>
+                        Add new image
+                        <!--<i class="bi bi-plus grey"></i>-->
                     </label>
                 </div> 
             </div>
@@ -20,19 +21,19 @@
         <div v-else>
             <!--Image attachment preview / Previous image section-->
             <div>
-                <img :src="url_link">
+                <img :src="url_link" class="url">
             </div>
 
             <!--Image attachment upload section-->
-            <div>
+            <div class="d-flex justify-content-between">
                 <div>
-                    <label for="file"  class="btn">
+                    <label for="file"  class="btn btn-sm text-primary fs-7" title="Change image">
                         <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
-                        <i class="bi bi-plus"></i>
+                        Change image
                     </label>
                 </div> 
                 <div>   
-                    <button class="btn bg-red" @click="deleteImage">
+                    <button class="btn btn-sm btn-danger" @click="deleteImage">
                         <i class="bi bi-trash-fill"></i>
                     </button>
                 </div>

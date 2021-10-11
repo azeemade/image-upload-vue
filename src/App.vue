@@ -8,11 +8,17 @@
 
         <!-- For single upload num_upload can be null or 1 -->
         <div>
-          <image-upload action="create"/>
+          <image-upload action="create" title="Upload new image"
+          image_style="{
+            border: 'rounded-circle',
+            height: '100px',
+            width: 100px
+            }" 
+          />
         </div>
         
         <div>
-          <image-upload :num_upload="4" action="create"/>
+          <image-upload :num_upload="4" action="create" image_border=""/>
         </div>
       </div>
       <div>
@@ -41,7 +47,6 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
