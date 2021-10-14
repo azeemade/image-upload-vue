@@ -1,29 +1,32 @@
 <template>
-        <div v-if="action_type == 'create'">
-            <CreateSingleUpload :img_sc_style="img_style" :img_sc_title="img_title" />
+    <div>
+        <!--Image attachment preview section-->
+        <div>
+            <img :src="preview == '' ? init : preview" :class="img_sc_style.border" 
+            :height="img_sc_style.height" :width="img_sc_style.width">
         </div>
 
-        <div v-else>
-            <UpdateSingleUpload :url_su_link="url_link" :img_su_style="img_style" 
-            :img_su_title="img_title"/>
+        <!--Image attachment upload section-->
+        <div class="d-flex justify-content-between mt-1 align-items-baseline">
+            <div>
+                <label for="file"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                    <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
+                    {{img_sc_title}}
+                </label>
+            </div>
+            <div v-show="del">   
+                <button class="btn text-danger" @click="deleteImage">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </div>
         </div>
+    </div>
 </template>
 <script>
-import CreateSingleUpload from './single-upload/createSingle.vue';
-import UpdateSingleUpload from './single-upload/updateSingle.vue';
 export default {
-    name: 'single-upload',
-    component: {CreateSingleUpload, UpdateSingleUpload },
-    props:{
-        action_type: {
-            type: String,
-            default: 'create'
-        },
-        url_link: {
-            type: String,
-            default: ''
-        },
-        img_style: {
+    name: 'CreateSingleUpload',
+    props: {
+        img_sc_style: {
             type: Object,
             default(){
                 return {
@@ -33,12 +36,12 @@ export default {
                 }
             }
         },
-        img_title: {
+        img_sc_title: {
             type: String,
             default: "Upload image",
         }
     },
-    /*data(){
+    data(){
         return{
             preview: "",
             del: false,
@@ -80,6 +83,11 @@ export default {
         init(){
             return require('@/assets/default.png');
         }
-    }*/
+    }
 }
 </script>
+<style scoped>
+    .hidden{
+        display: none;
+    }
+</style>

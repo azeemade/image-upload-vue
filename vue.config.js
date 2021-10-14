@@ -1,8 +1,8 @@
 // vue.config.js
 module.exports = {
     configureWebpack: {
-        output: {
+       /* output: {
             publicPath: '/src/'
-        }
+        }*/
     }
 }

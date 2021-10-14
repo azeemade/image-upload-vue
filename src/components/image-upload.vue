@@ -18,14 +18,11 @@
 <script>
 import MultiUpload from "./multi-upload.vue";
 import singleUpload from "./single-upload.vue";
+
 export default {
   components: { singleUpload, MultiUpload },
   name: "image-upload",
   props: {
-    num_upload: {
-      type: Number,
-      default: 1,
-    },
     action: {
       type: String,
       default: "create",
@@ -45,8 +42,12 @@ export default {
         }
     },
     title: {
-        type: String,
-        default: "Upload image",
+      type: String,
+      default: "Upload image",
+    },
+    num_upload: {
+      type: Number,
+      default: 1,
     }
   },
 };

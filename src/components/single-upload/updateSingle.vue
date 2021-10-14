@@ -1,29 +1,36 @@
 <template>
-        <div v-if="action_type == 'create'">
-            <CreateSingleUpload :img_sc_style="img_style" :img_sc_title="img_title" />
-        </div>
+    <div>
+        <!--Image attachment preview / Previous image section-->
+            <div>
+                <img :src="url_su_link" :class="img_su_style.border" 
+                :height="img_su_style.height" :width="img_su_style.width">
+            </div>
 
-        <div v-else>
-            <UpdateSingleUpload :url_su_link="url_link" :img_su_style="img_style" 
-            :img_su_title="img_title"/>
-        </div>
+            <!--Image attachment upload section-->
+            <div class="d-flex justify-content-between mt-1 align-items-baseline">
+                <div>
+                    <label for="file"  class="btn btn-sm text-primary fs-7" title="Change image">
+                        <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
+                        {{img_su_title}}
+                    </label>
+                </div> 
+                <div>   
+                    <button class="btn text-danger" @click="deleteImage">
+                        <i class="bi bi-trash-fill"></i>
+                    </button>
+                </div>
+            </div>
+    </div>
 </template>
 <script>
-import CreateSingleUpload from './single-upload/createSingle.vue';
-import UpdateSingleUpload from './single-upload/updateSingle.vue';
 export default {
-    name: 'single-upload',
-    component: {CreateSingleUpload, UpdateSingleUpload },
+    name: 'UpdateSingleUpload',
     props:{
-        action_type: {
-            type: String,
-            default: 'create'
-        },
-        url_link: {
+        url_su_link: {
             type: String,
             default: ''
         },
-        img_style: {
+        img_su_style: {
             type: Object,
             default(){
                 return {
@@ -33,15 +40,14 @@ export default {
                 }
             }
         },
-        img_title: {
+        img_su_title: {
             type: String,
             default: "Upload image",
         }
     },
-    /*data(){
+    data(){
         return{
             preview: "",
-            del: false,
         }
     },
     methods:{
@@ -80,6 +86,11 @@ export default {
         init(){
             return require('@/assets/default.png');
         }
-    }*/
+    }
 }
 </script>
+<style scoped>
+    .hidden{
+        display: none;
+    }
+</style>

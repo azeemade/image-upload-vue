@@ -26,7 +26,7 @@
         
         <!-- For single upload num_upload can be null or 1 -->
         <div>
-          <image-upload action="edit" :url="require('@/assets/disco.png')" 
+          <image-upload action="edit" :url="require('@/assets/disco.png')"
           title="Change image"/>
         </div>
         
