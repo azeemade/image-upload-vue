@@ -13,7 +13,7 @@ import CreateSingleUpload from './single-upload/createSingle.vue';
 import UpdateSingleUpload from './single-upload/updateSingle.vue';
 export default {
     name: 'single-upload',
-    component: {CreateSingleUpload, UpdateSingleUpload },
+    components: {CreateSingleUpload, UpdateSingleUpload },
     props:{
         action_type: {
             type: String,

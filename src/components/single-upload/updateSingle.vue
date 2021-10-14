@@ -2,20 +2,20 @@
     <div>
         <!--Image attachment preview / Previous image section-->
             <div>
-                <img :src="url_su_link" :class="img_su_style.border" 
+                <img :src="preview == '' ? url_su_link : preview" :class="img_su_style.border" 
                 :height="img_su_style.height" :width="img_su_style.width">
             </div>
 
             <!--Image attachment upload section-->
             <div class="d-flex justify-content-between mt-1 align-items-baseline">
                 <div>
-                    <label for="file"  class="btn btn-sm text-primary fs-7" title="Change image">
-                        <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
+                    <label for="sufile"  class="btn btn-sm text-primary fs-7" title="Change image">
+                        <input type="file" id="sufile" name="suImage" autocomplete="off" @change="attachimage" class="hidden">
                         {{img_su_title}}
                     </label>
                 </div> 
                 <div>   
-                    <button class="btn text-danger" @click="deleteImage">
+                    <button class="btn text-danger" @click="delete_Image">
                         <i class="bi bi-trash-fill"></i>
                     </button>
                 </div>
@@ -51,20 +51,16 @@ export default {
         }
     },
     methods:{
-        attach_image(e) {
+        attachimage(e) {
             var files = e.target.files
-            var files_ = files[0]
-            console.log(files_)
 
             if (!files.length)
                 return;
-            this.createImage(files[0]);
-
-            this.del = true;
+            this.create_Image(files[0]);
 
             return files;
         },
-        createImage(file) {
+        create_Image(file) {
             var reader = new FileReader();
             reader.onload = (e) => {
                 this.preview = e.target.result;
@@ -72,14 +68,11 @@ export default {
 
             reader.readAsDataURL(file);
         },
-        deleteImage(files){
+        delete_Image(files){
             var file = Array.from(files);
             file.splice(0, 1);
 
-            console.log(files);
-
-            this.del = false;
-            this.preview = "";
+            this.preview = this.init;
         }
     },
     computed: {

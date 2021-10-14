@@ -9,8 +9,8 @@
         <!--Image attachment upload section-->
         <div class="d-flex justify-content-between mt-1 align-items-baseline">
             <div>
-                <label for="file"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                    <input type="file" id="file" name="masterImage" autocomplete="off" @change="attach_image" class="hidden">
+                <label for="scfile"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                    <input type="file" id="scfile" name="scImage" autocomplete="off" @change="attachimage" class="hidden">
                     {{img_sc_title}}
                 </label>
             </div>
@@ -48,10 +48,9 @@ export default {
         }
     },
     methods:{
-        attach_image(e) {
+        attachimage(e) {
+            e.preventDefault();
             var files = e.target.files
-            var files_ = files[0]
-            console.log(files_)
 
             if (!files.length)
                 return;
@@ -72,8 +71,6 @@ export default {
         deleteImage(files){
             var file = Array.from(files);
             file.splice(0, 1);
-
-            console.log(files);
 
             this.del = false;
             this.preview = "";
