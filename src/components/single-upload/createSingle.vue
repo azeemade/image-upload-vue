@@ -10,7 +10,8 @@
         <div class="d-flex justify-content-between mt-1 align-items-baseline">
             <div>
                 <label for="scfile"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                    <input type="file" id="scfile" name="scImage" autocomplete="off" @change="attachimage" class="hidden">
+                    <input type="file" id="scfile" name="scImage" autocomplete="off" @change="attachimage" 
+                    class="hidden">
                     {{img_sc_title}}
                 </label>
             </div>

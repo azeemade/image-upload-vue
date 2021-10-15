@@ -1,7 +1,7 @@
 <template>
   <div>
     
-    <h4>Image Upload App</h4>
+    <h3 class="">Image Upload App</h3>
     <div class="d-flex justify-content-evenly">
       <div>
         <h5>CREATE</h5>
@@ -18,7 +18,7 @@
         </div>
         
         <div>
-          <image-upload :num_upload="4" action="create"/>
+          <image-upload :upload_type="'multi'" action="create"/>
         </div>
       </div>
       <div>
@@ -31,7 +31,7 @@
         </div>
         
         <div>
-          <image-upload :num_upload="4" action="create"/>
+          <image-upload :upload_type="'multi'" action="create"/>
         </div>
       </div>
     </div>

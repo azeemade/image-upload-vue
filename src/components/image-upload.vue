@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div v-if="num_upload == 1">
+    <div v-if="upload_type == 'single'">
       <single-upload :action_type="action" :url_link="url" 
       :img_style="image_style" :img_title="title"
       />
     </div>
     <div v-else>
       <multi-upload
-        :file_input_num="num_upload"
+        :upload__type="upload_type"
         :action_type="action"
         :url_link="url"
       />
@@ -45,9 +45,9 @@ export default {
       type: String,
       default: "Upload image",
     },
-    num_upload: {
-      type: Number,
-      default: 1,
+    upload_type: {
+      type: String,
+      default: 'single',
     }
   },
 };

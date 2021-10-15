@@ -35,51 +35,8 @@ export default {
         },
         img_title: {
             type: String,
-            default: "Upload image",
+            default: "Choose image",
         }
     },
-    /*data(){
-        return{
-            preview: "",
-            del: false,
-        }
-    },
-    methods:{
-        attach_image(e) {
-            var files = e.target.files
-            var files_ = files[0]
-            console.log(files_)
-
-            if (!files.length)
-                return;
-            this.createImage(files[0]);
-
-            this.del = true;
-
-            return files;
-        },
-        createImage(file) {
-            var reader = new FileReader();
-            reader.onload = (e) => {
-                this.preview = e.target.result;
-            };
-
-            reader.readAsDataURL(file);
-        },
-        deleteImage(files){
-            var file = Array.from(files);
-            file.splice(0, 1);
-
-            console.log(files);
-
-            this.del = false;
-            this.preview = "";
-        }
-    },
-    computed: {
-        init(){
-            return require('@/assets/default.png');
-        }
-    }*/
 }
 </script>
