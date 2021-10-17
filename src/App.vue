@@ -1,17 +1,15 @@
 <template>
   <div>
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-center mb-5">
       <h3>Image Upload App</h3>
       <a href="https://github.com/azeemade/vue-image-upload" class="btn border-bottom border-primary border-0">
         <i class="bi bi-github"></i>
       </a>
     </div>
-    <div class="d-flex justify-content-evenly">
-      <div>
-        <h5>CREATE</h5>
-
-        <!-- For single upload num_upload can be null or 1 -->
-        <div class="mb-5">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+          <h5>Single create</h5>
           <image-upload action="create" title="Upload new image"
           :image_style="{
             border: 'rounded-circle',
@@ -21,17 +19,15 @@
           />
           <button type="submit" @click="uploadCreateSingle" class="btn btn-sm btn-success">Upload</button>
         </div>
-        
-        <div>
+        <div class="col-md-8 d-grid justify-content-center">
+          <h5>Multi create</h5>
           <image-upload :upload_type="'multi'" action="create"/>
           <button type="submit" @click="uploadCreateMulti" class="btn btn-sm btn-success">Upload</button>
         </div>
       </div>
-      <div>
-        <h5>EDIT</h5>
-        
-        <!-- For single upload num_upload can be null or 1 -->
-        <div class="mb-5">
+      <div class="row mb-3">
+        <div class="col-md-4 mb-3">
+          <h5>Single edit</h5>
           <image-upload action="edit" :url="require('@/assets/disco.png')"
           title="Change image" :image_style="{
             height: '100',
@@ -39,8 +35,8 @@
             }"/>
             <button type="submit" @click="uploadEditSingle" class="btn btn-sm btn-success">Upload</button>
         </div>
-        
-        <div>
+        <div class="col-md-8 d-grid justify-content-center">
+          <h5>Multi edit</h5>
           <image-upload :upload_type="'multi'" action="edit" :urlm="images" :image_style="{
             height: '100',
             width: '100'
