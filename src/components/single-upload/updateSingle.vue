@@ -7,7 +7,7 @@
             </div>
 
             <!--Image attachment upload section-->
-            <div class="d-flex justify-content-between mt-1 align-items-baseline">
+            <div class="d-flex justify-content-center mt-1 align-items-baseline">
                 <div>
                     <label for="sufile"  class="btn btn-sm text-primary fs-7" title="Change image">
                         <input type="file" id="sufile" name="suImage" autocomplete="off" @change="attachimage" class="hidden">

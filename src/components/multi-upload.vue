@@ -21,8 +21,7 @@ export default {
             default: 'create'
         },
         url_link: {
-            type: String,
-            default: ''
+            type: Array,
         },
         img_style: {
             type: Object,

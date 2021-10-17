@@ -66,12 +66,12 @@ export default {
     },
     data(){
         return{
+            ayte: ['a', 'b', 'c', 'd'],
             preview: [],
             images: [],
             del: false,
             disinit: true,
             count: 0,
-            temp: ""
         }
     },
     methods:{

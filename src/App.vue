@@ -27,11 +27,17 @@
         <!-- For single upload num_upload can be null or 1 -->
         <div>
           <image-upload action="edit" :url="require('@/assets/disco.png')"
-          title="Change image"/>
+          title="Change image" :image_style="{
+            height: '100',
+            width: '100'
+            }"/>
         </div>
         
         <div>
-          <image-upload :upload_type="'multi'" action="create"/>
+          <image-upload :upload_type="'multi'" action="edit" :urlm="images" :image_style="{
+            height: '100',
+            width: '100'
+            }" />
         </div>
       </div>
     </div>
@@ -43,6 +49,11 @@ import imageUpload from './components/image-upload.vue'
 export default {
   components: { imageUpload },
   name: "App",
+  data(){
+    return{
+      images: ["disco.png", "mood.png" ]
+    }
+  }
 };
 </script>
 

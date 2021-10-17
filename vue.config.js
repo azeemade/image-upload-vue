@@ -4,5 +4,9 @@ module.exports = {
        /* output: {
             publicPath: '/src/'
         }*/
+    },
+    build:{
+        assetsPublicPath: '/src',
+        assetsSubDirectory: 'assets'
     }
 }
