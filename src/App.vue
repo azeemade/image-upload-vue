@@ -1,13 +1,17 @@
 <template>
   <div>
-    
-    <h3 class="">Image Upload App</h3>
+    <div class="d-flex justify-content-center mb-3">
+      <h3>Image Upload App</h3>
+      <a href="https://github.com/azeemade/vue-image-upload" class="btn border-bottom border-primary border-0">
+        <i class="bi bi-github"></i>
+      </a>
+    </div>
     <div class="d-flex justify-content-evenly">
       <div>
         <h5>CREATE</h5>
 
         <!-- For single upload num_upload can be null or 1 -->
-        <div class="mb-3">
+        <div class="mb-5">
           <image-upload action="create" title="Upload new image"
           :image_style="{
             border: 'rounded-circle',
@@ -27,7 +31,7 @@
         <h5>EDIT</h5>
         
         <!-- For single upload num_upload can be null or 1 -->
-        <div class="mb-3">
+        <div class="mb-5">
           <image-upload action="edit" :url="require('@/assets/disco.png')"
           title="Change image" :image_style="{
             height: '100',
