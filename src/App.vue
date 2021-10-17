@@ -10,7 +10,7 @@
       <div class="row mb-5">
         <div class="col-md-4 mb-3">
           <h5>Single create</h5>
-          <image-upload action="create" title="Upload new image"
+          <image-upload action="create" title="Choose image"
           :image_style="{
             border: 'rounded-circle',
             height: '100',
