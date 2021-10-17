@@ -1,40 +1,42 @@
 <template>
-    <div class="d-flex align-items-center">
-        <div v-for="(img, index) in url_mu_link" :key="index">
-            <div>
-                <img :src="require('@/assets/'+ img)" :class="img_mu_style.border" 
-                :height="img_mu_style.height" :width="img_mu_style.width">
+    <div class="d-flex align-items-baseline">
+        <div class="d-flex">
+            <div v-for="(img, index) in url_mu_link" :key="index">
+                <div class="me-1">
+                    <img :src="require('@/assets/'+ img)" :class="img_mu_style.border" 
+                    :height="img_mu_style.height" :width="img_mu_style.width">
+                </div>
+                <!--<div class="d-flex justify-content-between mt-1 align-items-baseline">
+                    <div>
+                        <label for="mufile"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                            <input type="file" id="mufile" name="muImage" autocomplete="off" @change="changeImage" class="hidden">
+                            <a class="img-text" v-text="del ?  'Change image': img_mu_title "></a>
+                        </label>
+                    </div>
+                    <div>   
+                        <button class="btn text-danger" @click="deleteImage(index)">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </div>-->
             </div>
-            <div class="d-flex justify-content-between mt-1 align-items-baseline">
+            <div v-for="(prev, index) in preview" :key="index">
                 <div>
-                    <label for="mufile"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                        <input type="file" id="mufile" name="muImage" autocomplete="off" @change="changeImage" class="hidden">
-                        <a class="img-text" v-text="del ?  'Change image': img_mu_title "></a>
-                    </label>
+                    <img :src="prev" :class="img_mu_style.border" 
+                    :height="img_mu_style.height" :width="img_mu_style.width">
                 </div>
-                <div>   
-                    <button class="btn text-danger" @click="deleteImage(index)">
-                        <i class="bi bi-trash-fill"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div v-for="(prev, index) in preview" :key="index">
-            <div>
-                <img :src="prev" :class="img_mu_style.border" 
-                :height="img_mu_style.height" :width="img_mu_style.width">
-            </div>
-            <div class="d-flex justify-content-between mt-1 align-items-baseline">
-                <div>
-                    <label for="mufile"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                        <input type="file" id="mufile" name="muImage" autocomplete="off" @change="changeImage" class="hidden">
-                        <a class="img-text" v-text="del ?  'Change image': img_mu_title "></a>
-                    </label>
-                </div>
-                <div v-show="del">   
-                    <button class="btn text-danger" @click="deleteImage(index)">
-                        <i class="bi bi-trash-fill"></i>
-                    </button>
+                <div class="d-flex justify-content-between mt-1 align-items-baseline">
+                    <div>
+                        <label for="mufile"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                            <input type="file" id="mufile" name="muImage" autocomplete="off" @change="changeImage" class="hidden">
+                            <a class="img-text" v-text="del ?  'Change image': img_mu_title "></a>
+                        </label>
+                    </div>
+                    <div v-show="del">   
+                        <button class="btn text-danger" @click="deleteImage(index)">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -44,18 +46,16 @@
                 :height="img_mu_style.height" :width="img_mu_style.width">
             </div>
             <div>
-                <label for="init"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                    <input type="file" id="init" name="init" autocomplete="off" @change="attachimage" class="hidden">
+                <label for="mu_init"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                    <input type="file" id="mu_init" name="mu_init" autocomplete="off" @change="attachimage" class="hidden">
                     <a class="img-text" v-text="img_mu_title "></a>
                 </label>
             </div>
         </div>
-        <div class="d-grid justify-content-center ms-2">
-            <div>
-                <button class="btn btn-primary" @click="addUpload">
-                    <i class="bi bi-plus"></i>
-                </button>
-            </div>
+        <div>
+            <button class="btn btn-primary" @click="addUpload">
+                <i class="bi bi-plus"></i>
+            </button>
         </div>
     </div>
 </template>

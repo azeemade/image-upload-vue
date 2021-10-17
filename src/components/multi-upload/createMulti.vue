@@ -1,47 +1,42 @@
 <template>
-    <div>
-        <div>
+    <div class="d-flex align-items-baseline">
+        <div class="d-flex me-3">
             <div v-for="(prev, index) in preview" :key="index">
-            
-            <div>
-                <img :src="prev" :class="img_mc_style.border" 
-                :height="img_mc_style.height" :width="img_mc_style.width">
+                <div class="me-1">
+                    <img :src="prev" :class="img_mc_style.border" 
+                    :height="img_mc_style.height" :width="img_mc_style.width">
+                </div>
+                <div class="d-flex justify-content-between mt-1 align-items-baseline">
+                    <div>
+                        <label for="mcfile"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                            <input type="file" id="mcfile" name="mcImage" autocomplete="off" @change="changeImage" class="hidden">
+                            <a class="img-text" v-text="del ?  'Change image': img_mc_title "></a>
+                        </label>
+                    </div>
+                    <div v-show="del">   
+                        <button class="btn text-danger" @click="deleteImage(index)">
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-
-           
-            <div class="d-flex justify-content-between mt-1 align-items-baseline">
+            <div v-show="disinit">
                 <div>
-                    <label for="mcfile"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                        <input type="file" id="mcfile" name="mcImage" autocomplete="off" @change="changeImage" class="hidden">
-                        <a class="img-text" v-text="del ?  'Change image': img_mc_title "></a>
+                    <img :src="init" :class="img_mc_style.border" 
+                    :height="img_mc_style.height" :width="img_mc_style.width">
+                </div>
+                <div>
+                    <label for="init"  class="text-primary btn-sm btn fs-7" title="Upload image">
+                        <input type="file" id="init" name="init" autocomplete="off" @change="attachimage" class="hidden">
+                        <a class="img-text" v-text="img_mc_title "></a>
                     </label>
                 </div>
-                <div v-show="del">   
-                    <button class="btn text-danger" @click="deleteImage(index)">
-                        <i class="bi bi-trash-fill"></i>
-                    </button>
-                </div>
             </div>
         </div>
-        <div v-show="disinit">
-            <div>
-                <img :src="init" :class="img_mc_style.border" 
-                :height="img_mc_style.height" :width="img_mc_style.width">
-            </div>
-            <div>
-                <label for="init"  class="text-primary btn-sm btn fs-7" title="Upload image">
-                    <input type="file" id="init" name="init" autocomplete="off" @change="attachimage" class="hidden">
-                    <a class="img-text" v-text="img_mc_title "></a>
-                </label>
-            </div>
-        </div>
-        <div class="d-grid justify-content-center">
-            <div>
-                <button class="btn btn-primary" @click="addUpload">
-                    <i class="bi bi-plus"></i>
-                </button>
-            </div>
-        </div>
+        <div>
+            <button class="btn btn-primary" @click="addUpload">
+                <i class="bi bi-plus"></i>
+            </button>
         </div>
     </div>
 </template>
