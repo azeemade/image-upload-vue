@@ -56,7 +56,7 @@ export default {
         },
         img_mc_title: {
             type: String,
-            default: "Upload image",
+            default: "Choose image",
         }
     },
     data(){

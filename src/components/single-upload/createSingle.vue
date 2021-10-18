@@ -39,7 +39,7 @@ export default {
         },
         img_sc_title: {
             type: String,
-            default: "Upload image",
+            default: "Choose image",
         }
     },
     data(){

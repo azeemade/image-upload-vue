@@ -42,7 +42,7 @@ export default {
         },
         img_su_title: {
             type: String,
-            default: "Upload image",
+            default: "Choose image",
         }
     },
     data(){

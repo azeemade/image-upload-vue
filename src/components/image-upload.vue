@@ -9,7 +9,7 @@
       <multi-upload
         :upload__type="upload_type"
         :action_type="action"
-        :url_link="urlm"
+        :url_link="urls"
         :img_style="image_style"
       />
     </div>
@@ -32,7 +32,7 @@ export default {
       type: String,
       default: "",
     },
-    urlm: {
+    urls: {
       type: Array,
     },
     image_style: {
@@ -47,7 +47,7 @@ export default {
     },
     title: {
       type: String,
-      default: "Upload image",
+      default: "Choose image",
     },
     upload_type: {
       type: String,

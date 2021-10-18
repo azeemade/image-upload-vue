@@ -37,7 +37,7 @@
         </div>
         <div class="col-md-8 d-grid justify-content-center">
           <h5>Multi edit</h5>
-          <image-upload :upload_type="'multi'" action="edit" :urlm="images" :image_style="{
+          <image-upload :upload_type="'multi'" action="edit" :urls="images" :image_style="{
             height: '100',
             width: '100'
             }" />

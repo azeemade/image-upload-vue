@@ -75,7 +75,7 @@ export default {
         },
         img_mu_title: {
             type: String,
-            default: "Upload image",
+            default: "Choose image",
         },
         url_mu_link:{
             type: Array,
