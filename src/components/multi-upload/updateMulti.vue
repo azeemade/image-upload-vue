@@ -3,7 +3,7 @@
         <div class="d-flex">
             <div v-for="(img, index) in url_mu_link" :key="index">
                 <div class="me-1">
-                    <img :src="require('@/assets/'+ img)" :class="img_mu_style.border" 
+                    <img :src="img" :class="img_mu_style.border" 
                     :height="img_mu_style.height" :width="img_mu_style.width">
                 </div>
                 <!--<div class="d-flex justify-content-between mt-1 align-items-baseline">

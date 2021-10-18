@@ -55,7 +55,9 @@ export default {
   name: "App",
   data(){
     return{
-      images: ["disco.png", "mood.png" ]
+      images: [require("@/assets/disco.png"), 
+      "https://github.com/azeemade/vue-image-upload/blob/main/src/assets/mood.png?raw=true" 
+      ]
     }
   },
 
