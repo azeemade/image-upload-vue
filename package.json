@@ -1,7 +1,7 @@
 {
-  "name": "vue-image-upload",
+  "name": "image-upload-vue",
   "version": "0.1.0",
-  "private": true,
+  "Author": "Azeem Adenuga (http://azeemade.netlify.com)",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -41,5 +41,16 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azeemade/image-upload-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azeemade/image-upload-vue/issues"
+  },
+  "homepage": "https://github.com/azeemade/image-upload-vue"
 }

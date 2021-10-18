@@ -1,1 +1,1 @@
-# vue-image-upload
+# image-upload-vue

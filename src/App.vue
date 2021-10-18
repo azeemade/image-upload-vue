@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex justify-content-center mb-5">
       <h3>Image Upload App</h3>
-      <a href="https://github.com/azeemade/vue-image-upload" class="btn border-bottom border-primary border-0">
+      <a href="https://github.com/azeemade/image-upload-vue" class="btn border-bottom border-primary border-0">
         <i class="bi bi-github"></i>
       </a>
     </div>
@@ -56,7 +56,7 @@ export default {
   data(){
     return{
       images: [require("@/assets/disco.png"), 
-      "https://github.com/azeemade/vue-image-upload/blob/main/src/assets/mood.png?raw=true" 
+      "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/mood.png?raw=true" 
       ]
     }
   },
