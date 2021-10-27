@@ -28,29 +28,31 @@ Install via NPM
   npm i image-upload-vue
 ```
 
-or include into **dependecies** section of package.json
+or include into **dependencies** section of package.json
 
 ```bash
   npm install --save image-upload-vue
 ```
 
-## Getting Started
+---
+
+**To install globally**
 
 ```bash
   import ImageUploadVue from 'image-upload-vue'
 ```
 
-To install globally
-
 ```bash
   Vue.use(ImageUploadVue)
 ```
 
-or to install in individual components
+**or to install in individual components**
 
 ```bash
     import 'ImageUpload' from 'image-upload-vue'
 ```
+
+## Getting Started
 
 Single Upload
 
