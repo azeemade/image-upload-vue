@@ -1,4 +1,4 @@
-# Vue Image Upload for Vue 3.x
+# Image Upload Vue for Vue 3.x
 
 A simple and customisable image upload component for Vue 3.x
 
