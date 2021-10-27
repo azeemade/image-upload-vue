@@ -1,12 +1,12 @@
 <template>
         <div v-if="action_type == 'create'">
             <CreateMultiUpload :img_mc_style="img_style" :img_mc_title="img_title" 
-            :upload_mc_type="upload__type" />
+            :upload_mc_type="upload__type" :default_img="default_image"/>
         </div>
 
         <div v-else>
             <UpdateMultiUpload :url_mu_link="url_link" :img_mu_style="img_style" 
-            :img_mu_title="img_title" :upload_mu_type="upload__type" />
+            :img_mu_title="img_title" :upload_mu_type="upload__type" :default_img="default_image"/>
         </div>
 </template>
 <script>
@@ -40,7 +40,11 @@ export default {
         upload__type: {
             type: String,
             default: 'single',
-        }
+        },
+        default_image: {
+            type: String,
+            default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
+        },
     },
 }
 </script>

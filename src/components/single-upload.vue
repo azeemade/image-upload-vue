@@ -1,11 +1,11 @@
 <template>
         <div v-if="action_type == 'create'">
-            <CreateSingleUpload :img_sc_style="img_style" :img_sc_title="img_title" />
+            <CreateSingleUpload :img_sc_style="img_style" :img_sc_title="img_title" :default_img="default_image"/>
         </div>
 
         <div v-else>
             <UpdateSingleUpload :url_su_link="url_link" :img_su_style="img_style" 
-            :img_su_title="img_title"/>
+            :img_su_title="img_title" :default_img="default_image"/>
         </div>
 </template>
 <script>
@@ -22,6 +22,10 @@ export default {
         url_link: {
             type: String,
             default: ''
+        },
+        default_image: {
+            type: String,
+            default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
         },
         img_style: {
             type: Object,

@@ -14,6 +14,7 @@ A simple and customisable image upload component for Vue 3.x
 - Customize image height and width
 - Customize image upload title
 - Customize image border radius using [Bootstrap](https://getbootstrap.com) classes
+- Customize default image before new image attachment
 
 ### Demo
 
@@ -27,7 +28,29 @@ Install via NPM
   npm i image-upload-vue
 ```
 
+or include into **dependecies** section of package.json
+
+```bash
+  npm install --save image-upload-vue
+```
+
 ## Getting Started
+
+```bash
+  import ImageUploadVue from 'image-upload-vue'
+```
+
+To install globally
+
+```bash
+  Vue.use(ImageUploadVue)
+```
+
+or to install in individual components
+
+```bash
+    import 'ImageUpload' from 'image-upload-vue'
+```
 
 Single Upload
 
@@ -71,11 +94,12 @@ The `urls` consists of an array of `images` which can be data.
 
 The following props can be passed to the component:
 
-| Prop        | Description                                                                      | Type   | Default                   |
-| ----------- | -------------------------------------------------------------------------------- | ------ | ------------------------- |
-| action      | This lets the `vue-image-upload` know the action to be performed: create or edit | String | create                    |
-| title       | This is the text of the file input button                                        | String | Choose image              |
-| image_style | These are image style properties: border-radius, height, width                   | Object | height = 160, width = 160 |
-| url         | The url / file location of the image to be loaded **for single upload**          | String |                           |
-| urls        | The url / file location of the image to be loaded **for multi upload**           | Array  |                           |
-| upload type | If set to `multi`, multiple image can be created and edited                      | String | single                    |
+| Prop        | Description                                                                      | Type   | Default                                                                                               |
+| ----------- | -------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------- |
+| action      | This lets the `vue-image-upload` know the action to be performed: create or edit | String | create                                                                                                |
+| title       | This is the text of the file input button                                        | String | Choose image                                                                                          |
+| image_style | These are image style properties: border-radius, height, width                   | Object | height = 160, width = 160                                                                             |
+| url         | The url / file location of the image to be loaded **for single upload**          | String |                                                                                                       |
+| urls        | The url / file location of the image to be loaded **for multi upload**           | Array  |                                                                                                       |
+| upload type | If set to `multi`, multiple image can be created and edited                      | String | single                                                                                                |
+| default     | The deafult image of the component before attachment                             | String | [default.png](https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true) |

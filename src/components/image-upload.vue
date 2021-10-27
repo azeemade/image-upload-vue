@@ -2,7 +2,7 @@
   <div>
     <div v-if="upload_type == 'single'">
       <single-upload :action_type="action" :url_link="url" 
-      :img_style="image_style" :img_title="title"
+      :img_style="image_style" :img_title="title" :default_image="placeholder"
       />
     </div>
     <div v-else>
@@ -10,7 +10,7 @@
         :upload__type="upload_type"
         :action_type="action"
         :url_link="urls"
-        :img_style="image_style"
+        :img_style="image_style" :default_image="placeholder"
       />
     </div>
   </div>
@@ -34,6 +34,10 @@ export default {
     },
     urls: {
       type: Array,
+    },
+    placeholder: {
+      type: String,
+      default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
     },
     image_style: {
       type: Object,

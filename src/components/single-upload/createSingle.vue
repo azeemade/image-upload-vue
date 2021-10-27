@@ -2,7 +2,7 @@
     <div>
         <!--Image attachment preview section-->
         <div>
-            <img :src="preview == '' ? init : preview" :class="img_sc_style.border" 
+            <img :src="preview == '' ? default_img : preview" :class="img_sc_style.border" 
             :height="img_sc_style.height" :width="img_sc_style.width">
         </div>
 
@@ -40,7 +40,11 @@ export default {
         img_sc_title: {
             type: String,
             default: "Choose image",
-        }
+        },
+        default_img:{
+            type: String,
+            default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
+        },
     },
     data(){
         return{
@@ -76,11 +80,6 @@ export default {
             this.del = false;
             this.preview = "";
             this.$store.commit('delCreateSingle')
-        }
-    },
-    computed: {
-        init(){
-            return require('@/assets/default.png');
         }
     }
 }

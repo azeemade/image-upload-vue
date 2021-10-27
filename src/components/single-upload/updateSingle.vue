@@ -30,6 +30,10 @@ export default {
             type: String,
             default: ''
         },
+        default_img:{
+            type: String,
+            default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
+        },
         img_su_style: {
             type: Object,
             default(){
@@ -72,14 +76,9 @@ export default {
             var file = Array.from(files);
             file.splice(0, 1);
 
-            this.preview = this.init;
+            this.preview = this.default_img;
         }
     },
-    computed: {
-        init(){
-            return require('@/assets/default.png');
-        }
-    }
 }
 </script>
 <style scoped>

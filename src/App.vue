@@ -15,7 +15,7 @@
             border: 'rounded-circle',
             height: '100',
             width: '100'
-            }" 
+            }"
           />
           <button type="submit" @click="uploadCreateSingle" class="btn btn-sm btn-success">Upload</button>
         </div>
@@ -28,7 +28,7 @@
       <div class="row mb-3">
         <div class="col-md-4 mb-3">
           <h5>Single edit</h5>
-          <image-upload action="edit" :url="require('@/assets/disco.png')"
+          <image-upload action="edit" url="https://github.com/azeemade/image-upload-vue/blob/main/src/assets/disco.png?raw=true"
           title="Change image" :image_style="{
             height: '100',
             width: '100'
@@ -55,7 +55,12 @@ export default {
   name: "App",
   data(){
     return{
-      images: [require("@/assets/disco.png"), 
+      images: [
+        //using an image file in assets directory
+        //require("@/assets/disco.png"), 
+
+        //or using an external image file
+      "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/disco.png?raw=true",
       "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/mood.png?raw=true" 
       ]
     }

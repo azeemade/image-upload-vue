@@ -22,7 +22,7 @@
             </div>
             <div v-show="disinit">
                 <div>
-                    <img :src="init" :class="img_mc_style.border" 
+                    <img :src="default_img" :class="img_mc_style.border" 
                     :height="img_mc_style.height" :width="img_mc_style.width">
                 </div>
                 <div>
@@ -53,6 +53,10 @@ export default {
                     border: ""
                 }
             }
+        },
+        default_img:{
+            type: String,
+            default: "https://github.com/azeemade/image-upload-vue/blob/main/src/assets/default.png?raw=true",
         },
         img_mc_title: {
             type: String,
@@ -106,11 +110,6 @@ export default {
         },
         addUpload(){
             this.disinit = true
-        }
-    },
-    computed:{
-        init(){
-            return require('@/assets/default.png');
         }
     },
 }
