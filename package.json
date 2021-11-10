@@ -1,6 +1,6 @@
 {
   "name": "image-upload-vue",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "Author": "Azeem Adenuga (http://azeemade.netlify.com)",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,7 +8,7 @@
     "build-library" : "vue-cli-service build --target lib --name image-upload-vue ./src/index.js",
     "lint": "vue-cli-service lint"
   },
-  "main" : ".dist/image-upload-vue.common.js",
+  "main" : "dist/image-upload-vue.common.js",
   "files": ["dist"],
   "dependencies": {
     "bootstrap": "^5.1.1",

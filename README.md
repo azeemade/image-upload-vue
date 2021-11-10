@@ -49,7 +49,7 @@ or include into **dependencies** section of package.json
 **or to install in individual components**
 
 ```bash
-    import 'ImageUpload' from 'image-upload-vue'
+    import ImageUpload from 'image-upload-vue'
 ```
 
 ## Getting Started
@@ -71,7 +71,7 @@ Single Upload
 Multi Upload
 
 ```bash
-    <image-upload :upload_type="'multi'" action="edit" :urls="images"
+    <image-upload upload_type="multi" action="edit" :urls="images"
         :image_style="{
             height: '100',
             width: '100'
@@ -90,6 +90,24 @@ The `urls` consists of an array of `images` which can be data.
             ]
         }
     },
+```
+
+To get the output file for server upload
+
+```bash
+    <script>
+    import {mapGetters} from 'vuex'
+    export default {
+        computed:{
+            ...mapGetters([
+                "createSingle",  //single file output using ***upload_type="single" action="create"***
+                "updateSingle",    //single file output using ***upload_type="single" action="edit"***
+                "createMulti",    //single file output using ***upload_type="multi" action="create"***
+                "updateMulti"       //single file output using ***upload_type="multi" action="edit"***
+            ])
+        }
+    };
+    </script>
 ```
 
 ## Docs
