@@ -18,7 +18,7 @@ A simple and customisable image upload component for Vue 3.x
 
 ### Demo
 
-https://vue-image-upload.netlify.app/
+https://image-upload-vue.netlify.app/
 
 ## Installation
 
